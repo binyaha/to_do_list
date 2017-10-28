@@ -1,0 +1,2 @@
+class Hank < ApplicationRecord
+end

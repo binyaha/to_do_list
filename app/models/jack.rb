@@ -1,0 +1,2 @@
+class Jack < ApplicationRecord
+end
