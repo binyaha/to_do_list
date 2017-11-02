@@ -1,21 +1,52 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-default navbar-fixed-top navbar-info">
   <div class="container">
     <div class="navbar-header">  
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#qqq">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="" class="navbar-brand">Hank's photo</a>
+      <%= link_to "Hank's photo", hanks_path,class: "navbar-brand" %>
+      
     </div>
     <div class="collapse navbar-collapse" id="qqq">
       <ul class="nav navbar-nav">
-        <li><a href="">photo</a></li>
-        <li><a href="">To do list</a></li>
+        <li class="active"><%= link_to "photo", hanks_path %></li>
+        <li><%= link_to "To do list", taskhanks_path %></li>
+
       </ul>
+      <%= link_to "", new_hank_path ,class: "btn btn-primary glyphicon glyphicon-open navbar-right navbar-btn"%>
     </div>
     
     </div>
   </div>
+  <br />
+  <br />
+  <hr />
+
+<div class="container">
+  <% @hanks.each do |photo| %>
+
+  <div class="thumbnail col-md-3 col-sm-4 col-xs-10" >
+
+    <%= image_tag photo.file_location.url %>   <!--why ???-->
+
+    <div class="caption">
+    <ul class="list-group well">
+    <li class="list-group-item list-group-item-danger"><%= photo.name %></li>
+    <li class="list-group-item list-group-item-info"><%= photo.date %></li>
+    <li class="list-group-item list-group-item-success"><%= photo.note %></li>
+    <br>
+  
+    </ul>
+    <div class="button-group text-center">
+      <%= link_to "大圖", hank_path(photo), class: "btn btn-primary btn-xs" %>
+      <%= link_to "編輯", edit_hank_path(photo), class: "btn btn-primary btn-xs" %>
+      <%= link_to "刪除", hank_path(photo), class: "btn btn-primary btn-xs", method: :delete, data:{ confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>
+  <% end %>
+
 
 
   

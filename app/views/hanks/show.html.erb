@@ -1,0 +1,18 @@
+<style>
+
+.container {
+  max-width: 50%;
+  margin: 30px auto;
+}
+
+.my-set {
+  width: 100%;
+}
+
+</style>
+
+<div class="container">
+
+<%= image_tag @hank.file_location.url, class: "my-set" %> 
+</div>
+<%= link_to "返回", hanks_path, class: "btn btn-primary col-xs-offset-6" %>

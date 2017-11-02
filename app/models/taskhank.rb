@@ -1,0 +1,3 @@
+class Taskhank < ApplicationRecord
+
+end

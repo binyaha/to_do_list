@@ -1,0 +1,28 @@
+<div class="form container">
+  <%= form_for @hank do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.text_field :date, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :note %>
+      <%= f.text_field :note, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :file_location %>
+      <%= f.file_field :file_location %>
+    </div>
+    <%= f.submit (@hank.persisted? ? "Update" : "Create") %>
+  <% end %>
+
+<% if @hank.errors.present? %>
+<% @hank.errors.each do |err,mess| %>
+<h1 class="text-danger"><span class="glyphicon glyphicon-remove-sign text-danger"></span><%= "#{err} #{mess}" %></h1>
+<% end %>
+<% end %>
+</div>
+</div>

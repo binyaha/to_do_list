@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :hanks
   resources :toms
   resources :jacks
+  resources :taskhanks
 
 
 end

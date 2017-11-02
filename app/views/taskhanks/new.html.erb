@@ -1,0 +1,28 @@
+  <%= form_for @task  do |f| %>
+   <div class="container col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+   <h1 class="text-center">Creat your new task</h1>
+
+   <hr >
+
+   <div class="list">
+    <div class="list-group-item well">
+      <%= f.label :task %>
+      <br />
+      <%= f.text_field :task %>
+    </div>
+      <div class="list-group-item well">
+      <%= f.label :due_date %>
+       <br />
+      <%= f.text_field :due_date %>
+    </div>
+      <div class="list-group-item well">
+      <%= f.label :note %>
+       <br />
+      <%= f.text_field :note %>
+    </div>
+
+      <%= f.submit "Create", class: "col-xs-2 col-xs-offset-5 btn btn-primary" %>
+
+    </div>
+    </div>
+  <% end %>
